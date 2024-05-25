@@ -1,0 +1,188 @@
+
+https://wutthipong.info/download/RichmenuDevVersion.pdf
+ตัวอย่างไฟล์ที่จะใช้
+https://wutthipong.info/download/richmenu.zip
+ตัวอย่าง LINE OA ของผม
+https://lin.ee/sJCNynD
+
+https://fb.watch/rGUzJn4kQq/ ดูที่นี่ครับ ย้อนหลังครับ
+
+https://medium.com/firebasethailand/cloud-functions-for-firebase-2nd-gen-cdda33bbd7dd 
+
+
+สิ่งที่จะให้ผู้อบรมส่งหลังจากเรียนครบ ภายใน 10 วัน
+
+ส่ง LINE OA มาในรูปแบบ Link เพิ่มเพื่อน ผ่านทาง Google Form ที่กำหนด
+โดย LINE OA สามารถทำงานได้ ดังนี้
+1. มี Richmenu ที่สร้างด้วย Messanging API มีการใช้ Richmenu Swich Action สามารถเลือกสลับเมนูไปมาได้
+2. มี Chatbot ซึ่งกำหนดเงื่อนไขดังนี้ 
+2.1 "LINE Dev Camp" ให้ตอบกลับมาว่า "I am a LINE developer." พร้อมทั้งส่ง Imagemap ตามที่กำหนดกลับมาด้วย ซึ่งการตอบนี้เกิดจากเงื่อนไขที่กำหนดใน Webhook 
+2.2 หากพิมพ์คำทักทาย เช่น สวีดัส, สวัสดี, Hello ให้ตอบกลับเป็นการทักทาย เช่น สวัสดีครับ หรือ สวัสดีค่ะ โดยระหว่างการรอคำตอบให้แสดง Loading Animation ด้วย ซึ่งการตอบนี้เกิดจาก Intent ที่กำหนดใน Dialogflow
+3. ใน Richmenu มี 1 ปุ่มที่สามารถเปิด LIFF ขึ้นมา แล้วมีผลลัพธ์ดังนี้
+3.1 ในหน้าจอให้แสดง รูป Profile และชื่อของผู้ใช้งานที่เปิด LIFF ได้ 
+3.2 ในหน้าจอให้มีปุ่มสำหรับส่งข้อความกลับไปในห้อง Chat ในรูปแบบ  Flex Message ตามที่กำหนด
+3.3 ในหน้าจอให้มีปุ่มสำหรับ Share Flex Message ที่ใช้ในข้อ 3.2 ให้กับผู้ใช้คนอื่นๆ ได้
+
+
+
+Troubleshooting info:
+  Principal: chaiwat26859@gmail.com
+  Resource: line-dev-camp-workshop
+  Troubleshooting URL: console.cloud.google.com/iam-admin/troubleshooter;permissions=resourcemanager.projects.get,resourcemanager.projects.getIamPolicy;principal=chaiwat26859@gmail.com;resources=%2F%2Fcloudresourcemanager.googleapis.com%2Fprojects%2Fline-dev-camp-workshop,%2F%2Fcloudresourcemanager.googleapis.com%2Fprojects%2Fline-dev-camp-workshop/result
+
+Missing permissions:
+  resourcemanager.projects.get
+  resourcemanager.projects.getIamPolicy
+
+
+code TH 
+{
+  "size": {
+    "width": 2500,
+    "height": 843
+  },
+  "selected": true,
+  "name": "Rich Menu TH",
+  "chatBarText": "เมนู",
+  "areas": [
+    {
+      "bounds": {
+        "x": 1063,
+        "y": 436,
+        "width": 1193,
+        "height": 404
+      },
+    "action": {
+    "type": "richmenuswitch",
+    "richMenuAliasId": "richmenu-ex",
+    "data": "Example Menu"
+}
+    },
+    {
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 604,
+        "height": 843
+      },
+      "action": {
+        "type": "message",
+        "text": "Action 2"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1060,
+        "y": 0,
+        "width": 1188,
+        "height": 394
+      },
+      "action": {
+        "type": "uri",
+        "uri": "https://www.facebook.com/chaiwat.butworn?locale=th_TH"
+      }
+    },
+    {
+      "bounds": {
+        "x": 2256,
+        "y": 0,
+        "width": 244,
+        "height": 404
+      },
+      "action": {
+    "type": "richmenuswitch",
+    "richMenuAliasId": "richmenu-en",
+    "data": "EN Menu"
+    } 
+    }
+  ]
+}
+
+
+code EN
+{
+  "size": {
+    "width": 2500,
+    "height": 843
+  },
+  "selected": true,
+  "name": "Rich Menu EN",
+  "chatBarText": "Manu",
+  "areas": [
+    {
+      "bounds": {
+        "x": 2255,
+        "y": 431,
+        "width": 245,
+        "height": 412
+      },
+       "action": {
+    "type": "richmenuswitch",
+    "richMenuAliasId": "richmenu-th",
+    "data": "TH Menu"
+    }
+    }
+  ]
+}
+
+code EX
+{
+  "size": {
+    "width": 2500,
+    "height": 843
+  },
+  "selected": true,
+  "name": "Rich Menu Ex",
+  "chatBarText": "Example",
+  "areas": [
+    {
+      "bounds": {
+        "x": 2270,
+        "y": 0,
+        "width": 230,
+        "height": 843
+      },
+      "action": {
+    "type": "richmenuswitch",
+    "richMenuAliasId": "richmenu-th",
+    "data": "TH Menu"
+    }
+    },
+    {
+      "bounds": {
+        "x": 1496,
+        "y": 385,
+        "width": 698,
+        "height": 198
+      },
+      "action": {
+        "type": "uri",
+        "uri": "https://line.me/R/nv/camera/"
+      }
+    },
+    {
+      "bounds": {
+        "x": 708,
+        "y": 385,
+        "width": 730,
+        "height": 189
+      },
+      "action": {
+        "type": "uri",
+        "uri": "https://line.me/R/nv/location/"
+      }
+    },
+    {
+      "bounds": {
+        "x": 714,
+        "y": 589,
+        "width": 770,
+        "height": 154
+      },
+      "action": {
+        "type": "message",
+        "text": "Action 4"
+      }
+    }
+  ]
+}
