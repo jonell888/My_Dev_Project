@@ -173,3 +173,15 @@ let userLastNameInput = prompt("Enter lastname", userInput )
 alert(sayHello(userInput, userLastNameInput))
 */
 
+//****************** Lecture 26 การใช้ array ********************************
+  let arr = [10,20  ,"A","B"]
+  alert(arr[0]) // ตอนที่ 1
+  alert(arr[1]) //  ตอนที่ 2
+  alert(arr[3]) // A
+    for (i=0; i<arr.length; i++) {
+      alert(arr[i]);
+    }
+
+    for (const element of arr) {
+      console.log(element);
+    }
