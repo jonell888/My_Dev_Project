@@ -1,12 +1,15 @@
 <template>
   <div class="faq">
-    FAQ
+    
   </div>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
-  name: 'faq'
+  name: 'faq',
+
 }
 </script>
 
