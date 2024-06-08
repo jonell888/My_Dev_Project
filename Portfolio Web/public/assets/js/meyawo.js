@@ -14,26 +14,27 @@
 
 // smooth scroll
 $(document).ready(function () {
-  $(".navbar .nav-link").on('click', function (event) {
-
+  $("a").on("click", function (event) {
     if (this.hash !== "") {
-
       event.preventDefault();
 
       var hash = this.hash;
-
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 700, function () {
-        window.location.hash = hash;
-      });
+      $("html, body").animate(
+        {
+          scrollTop: $(hash).offset().top,
+        },
+        800,
+        function () {
+          window.location.hash = hash;
+        }
+      );
     }
   });
 });
 
 // navbar toggle
 $('#nav-toggle').click(function () {
-  $(this).toggleClass('is-active')
+  $(this).toggleClass('is-active');
   $('ul.nav').toggleClass('show');
 });
 
@@ -78,7 +79,7 @@ const aboutCaption = document.querySelector('.about-fedIn');
 
 const observerOptions = {
   root: null,
-  threshold: 0.1, // Adjust the threshold as needed
+  threshold: 0.01, // Adjust the threshold as needed
   rootMargin: '0px'
 };
 
@@ -98,7 +99,7 @@ observer2.observe(aboutImgHolder);
 observer2.observe(aboutCaption);
 
 //service-card show slide
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   const serviceCards = document.querySelectorAll(".service-card");
   const serviceSection = document.querySelector("#service");
 
@@ -119,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function() {
       });
     },
     {
-      threshold: 0.4, // ปรับค่านี้เพื่อกำหนดว่า section ต้องเข้ามาในมุมมองมากแค่ไหนก่อนที่ animation จะเริ่มทำงาน
+      threshold: 0.1, // ปรับค่านี้เพื่อกำหนดว่า section ต้องเข้ามาในมุมมองมากแค่ไหนก่อนที่ animation จะเริ่มทำงาน
     }
   );
 
