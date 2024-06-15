@@ -69,7 +69,7 @@ const observer = new IntersectionObserver(entries => {
       slideUpText.style.transform = 'translateY(50%)';
     }
   });
-}, { threshold: 0.5 });
+}, { threshold: 1 });
 
 observer.observe(document.querySelector('.observer'));
 
