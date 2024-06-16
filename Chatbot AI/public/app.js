@@ -1,14 +1,13 @@
+require('.env').config();
 
 const btn = document.querySelector('.talk');
 const content = document.querySelector('.content');
 
 function speak(text) {
     const text_speak = new SpeechSynthesisUtterance(text);
-
     text_speak.rate = 1;
     text_speak.volume = 1;
     text_speak.pitch = 1;
-
     window.speechSynthesis.speak(text_speak);
 }
 
@@ -26,8 +25,8 @@ function wishMe() {
 }
 
 window.addEventListener('load', () => {
-    speak("Initializing JARVIS...");
     wishMe();
+    speak("I'm Daniel...How may I help you?");
 });
 
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -45,41 +44,65 @@ btn.addEventListener('click', () => {
     recognition.start();
 });
 
-function takeCommand(message) {
-    if (message.includes('hey') || message.includes('hello')) {
-        speak("Hello Sir, How May I Help You?");
-    } else if (message.includes("open google")) {
-        window.open("https://google.com", "_blank");
-        speak("Opening Google...");
-    } else if (message.includes("open youtube")) {
-        window.open("https://youtube.com", "_blank");
-        speak("Opening Youtube...");
-    } else if (message.includes("open facebook")) {
-        window.open("https://facebook.com", "_blank");
-        speak("Opening Facebook...");
-    } else if (message.includes('what is') || message.includes('who is') || message.includes('what are')) {
-        window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
-        const finalText = "This is what I found on the internet regarding " + message;
-        speak(finalText);
-    } else if (message.includes('wikipedia')) {
-        window.open(`https://en.wikipedia.org/wiki/${message.replace("wikipedia", "").trim()}`, "_blank");
-        const finalText = "This is what I found on Wikipedia regarding " + message;
-        speak(finalText);
-    } else if (message.includes('time')) {
-        const time = new Date().toLocaleString(undefined, { hour: "numeric", minute: "numeric" });
-        const finalText = "The current time is " + time;
-        speak(finalText);
-    } else if (message.includes('date')) {
-        const date = new Date().toLocaleString(undefined, { month: "short", day: "numeric" });
-        const finalText = "Today's date is " + date;
-        speak(finalText);
-    } else if (message.includes('calculator')) {
-        window.open('Calculator:///');
-        const finalText = "Opening Calculator";
-        speak(finalText);
-    } else {
-        window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
-        const finalText = "I found some information for " + message + " on Google";
-        speak(finalText);
+async function sendMessage() {
+    const userInput = document.getElementById('userInput').value;
+    if (!userInput) return;
+
+    const chatbox = document.getElementById('chatbox');
+    const userMessage = document.createElement('p');
+    userMessage.innerHTML = `<strong>You:</strong> ${userInput}`;
+    chatbox.appendChild(userMessage);
+
+    const response = await getResponseFromGPT(userInput);
+
+    const botMessage = document.createElement('p');
+    botMessage.innerHTML = `<strong>DANIEL:</strong> ${response}`;
+    chatbox.appendChild(botMessage);
+
+    document.getElementById('userInput').value = '';
+    chatbox.scrollTop = chatbox.scrollHeight;
+}
+
+async function getResponseFromGPT(userInput) {
+    const apiKey = ''; // ใส่ API Key ของคุณที่นี่
+    const url = 'https://api.openai.com/v1/chat/completions';
+    const headers = {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`
+    };
+    const data = {
+        model: 'gpt-3.5-turbo',
+        messages: [{ role: 'user', content: userInput }],
+        max_tokens: 150,
+        temperature: 0.7
+    };
+
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: headers,
+            body: JSON.stringify(data)
+        });
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(`HTTP error! status: ${response.status}, message: ${errorText}`);
+        }
+
+        const result = await response.json();
+        return result.choices[0].message.content.trim();
+    } catch (error) {
+        console.error('Error fetching the API:', error);
+        return 'Sorry, I am having trouble connecting to the server. Please try again later.';
     }
 }
+
+// การเชื่อมต่อปุ่มส่งข้อความกับฟังก์ชัน sendMessage
+document.querySelector('.send').addEventListener('click', sendMessage);
+
+// การเชื่อมต่อปุ่มกด Enter กับฟังก์ชัน sendMessage
+document.getElementById('userInput').addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        sendMessage();
+    }
+});
