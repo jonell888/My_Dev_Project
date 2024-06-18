@@ -63,6 +63,7 @@ const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       slideUpText.style.animation = 'slideUpAnimation 0.7s ease-out forwards';
+      observer.unobserve(entry.target); // หยุดสังเกตการณ์หลังจากแอนิเมชันทำงาน
     } else {
       slideUpText.style.animation = 'none';
       slideUpText.style.opacity = '0';
@@ -79,7 +80,7 @@ const aboutCaption = document.querySelector('.about-fedIn');
 
 const observerOptions = {
   root: null,
-  threshold: 0.01, // Adjust the threshold as needed
+  threshold: 0.01,
   rootMargin: '0px'
 };
 
@@ -87,6 +88,7 @@ const observerCallback = (entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('slide-from-left');
+      observer.unobserve(entry.target); // หยุดสังเกตการณ์หลังจากแอนิเมชันทำงาน
     } else {
       entry.target.classList.remove('slide-from-left');
     }
@@ -111,6 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
             card.style.animationDelay = `${index * 200}ms`;
             card.classList.add("fade-in");
           });
+          observer.unobserve(entry.target); // หยุดสังเกตการณ์หลังจากแอนิเมชันทำงาน
         } else {
           serviceCards.forEach((card) => {
             card.classList.remove("fade-in");
@@ -120,9 +123,27 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     },
     {
-      threshold: 0.1, // ปรับค่านี้เพื่อกำหนดว่า section ต้องเข้ามาในมุมมองมากแค่ไหนก่อนที่ animation จะเริ่มทำงาน
+      threshold: 0.1,
     }
   );
 
   observer.observe(serviceSection);
 });
+
+const toggleSwitch = document.querySelector('input[type="checkbox"]');
+const body = document.body;
+
+// ฟังก์ชันเปลี่ยนธีม
+function toggleTheme(isDark) {
+  body.classList.toggle('dark-mode', isDark);
+}
+
+// เรียกใช้ฟังก์ชันเมื่อคลิกปุ่มสวิทช์
+toggleSwitch.addEventListener('change', () => {
+  toggleTheme(toggleSwitch.checked);
+});
+
+// ตรวจสอบโหมดที่ผู้ใช้เลือกไว้ก่อนหน้า
+const isDarkMode = localStorage.getItem('isDarkMode') === 'true';
+toggleTheme(isDarkMode);
+toggleSwitch.checked = isDarkMode;
