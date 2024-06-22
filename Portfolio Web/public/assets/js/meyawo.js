@@ -134,3 +134,22 @@ toggleSwitch.addEventListener('change', () => {
 const isDarkMode = localStorage.getItem('isDarkMode') === 'true';
 toggleTheme(isDarkMode);
 toggleSwitch.checked = isDarkMode;
+
+let currentLanguage = 'en';
+
+function toggleLanguage() {
+    currentLanguage = currentLanguage === 'en' ? 'th' : 'en';
+    updateLanguage();
+}
+
+document.getElementById('navLanguageToggle').addEventListener('click', toggleLanguage);
+
+function updateLanguage() {
+    document.querySelectorAll('[data-en]').forEach(elem => {
+        elem.textContent = elem.getAttribute(`data-${currentLanguage}`);
+    });
+    
+    // อัปเดตข้อความสำหรับการเปลี่ยนภาษา
+    const languageText = currentLanguage === 'en' ? 'TH | EN' : 'EN | TH';
+    document.getElementById('navLanguageToggle').textContent = languageText;
+}

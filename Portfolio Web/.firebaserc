@@ -1,5 +1,16 @@
 {
   "projects": {
     "default": "portfolio-185e3"
-  }
+  },
+  "targets": {
+    "portfolio-185e3": {
+      "hosting": {
+        "thejoewbdev": [
+          "portfolio-185e3"
+        ]
+      }
+    }
+  },
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }

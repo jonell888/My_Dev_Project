@@ -34,11 +34,14 @@
                 <li class="item">
                     <a class="link" href="#contact">Contact</a>
                 </li>
-               <li><label class="switch">
-                    <input type="checkbox">
-                    <span class="slider"></span>
-                </label>
-            </li> 
+                <li class="item">
+                    <a id="navLanguageToggle" class="link">TH | EN</a>
+                </li>
+                <li><label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </li>
             </ul>
             <a href="javascript:void(0)" id="nav-toggle" class="hamburger hamburger--elastic">
                 <div class="hamburger-box">
@@ -53,15 +56,17 @@
     <header id="home" class="header">
         <div class="overlay"></div>
         <div class="header-content container">
-            <div class="slide-up-text"><img src="assets/imgs/avatar.png" alt="Chaiwat Butworn" width="180" >
+            <div class="slide-up-text"><img src="assets/imgs/avatar.png" alt="Chaiwat Butworn" width="180">
                 <h1 class="header-title">
-                    <span class="up">Hello I'm</span>
-                    <span class="down">Chaiwat_Butworn</span>
+                    <span class="up" data-en="Hello I'm" data-th="สวัสดีครับ ผม">Hello I'm</span>
+                    <span class="down" data-en="Chaiwat Butworn" data-th="นาย ชัยวัฒน์ บุตรวร">Chaiwat Butworn</span>
                 </h1>
-                <p class="header-subtitle">Junior Web Developer </p>
+                <p class="header-subtitle" data-en="Junior Web Developer" data-th="เป็นนักพัฒนาเว็บไซต์ระดับจูเนียร์">
+                    Junior Web
+                    Developer</p>
 
                 <a class="link" href="#contact">
-                    <button class="btn btn-primary">Let's talk</button>
+                    <button class="btn btn-primary" data-en="Let's talk" data-th="พูดคุย">Let's talk</button>
                 </a>
             </div>
             <div class="observer"></div>
@@ -69,6 +74,8 @@
         <br>
         <br>
     </header><!-- end of page header -->
+
+    <!-- back to top button -->
     <button id="backToTop">Back to Top</button>
 
     <!-- about section -->
@@ -81,19 +88,28 @@
             <!-- about wrapper -->
             <div class="about">
                 <div class="about-img-holder slide-from-left">
-                    <img src="assets/imgs/me.png" class="about-img"
-                        alt="Chaiwat Butworn">
+                    <img src="assets/imgs/me.png" class="about-img" alt="Chaiwat Butworn">
                 </div>
                 <div class="about-caption about-fedIn">
-                    <p class="section-subtitle about-fedIn">Get To Know</p>
-                    <h2 class="section-title mb-4 mb-4 about-fedIn">About Me</h2>
-                    <p class="about-fedIn">
+                    <p class="section-subtitle about-fedIn" data-en="Get To Know" data-th="ทำความรู้จัก">Get To Know</p>
+                    <h2 class="section-title mb-4 mb-4 about-fedIn" data-en="About Me" data-th="เกี่ยวกับฉัน">About Me
+                    </h2>
+                    <p class="about-fedIn" data-en="I am studying in the IT field, focusing on learning the Java language and database structures.
+                    In addition, I've also learned the C# language. During my IT studies, I discovered a keen
+                    interest in web development using HTML, CSS, JS, and React.js, allowing me to efficiently
+                    develop both front-end and back-end also Projects all in link below."
+                        data-th="ฉันกำลังศึกษาสาขาไอที โดยเน้นการเรียนรู้ภาษา Java และโครงสร้างฐานข้อมูล นอกจากนี้ ฉันยังได้เรียนภาษา C# ด้วย ในระหว่างการศึกษาด้านไอทีของฉัน ฉันค้นพบความสนใจอย่างมากในการพัฒนาเว็บไซต์โดยใช้ HTML, CSS, JS และ React.js ทำให้ฉันพัฒนาทั้งส่วนหน้าและส่วนหลังได้อย่างมีประสิทธิภาพ รวมถึงโครงการทั้งหมดตามลิงก์ด้านล่าง">
                         I am studying in the IT field, focusing on learning the Java language and database structures.
                         In addition, I've also learned the C# language. During my IT studies, I discovered a keen
                         interest in web development using HTML, CSS, JS, and React.js, allowing me to efficiently
                         develop both front-end and back-end also Projects all in link below.
-                        </p> 
-                        <p>
+                    </p>
+                    <p data-en=" My job is to build your website so that it is functional and user-friendly but at the same
+                    time attractive. I have a strong passion for the creativity and discipline that goes into
+                    front-end development. Keeping in mind scalability and clean code that is maintainable and
+                    readable. Backend development is also a strong suit of mine. I am proficient in Firebase,
+                    Node.js, SQL server, and Postman." data-th="งานของฉันคือสร้างเว็บไซต์ของคุณเพื่อให้ใช้งานได้จริงและใช้งานง่าย แต่ในขณะเดียวกันก็น่าดึงดูด ฉันมีความหลงใหลในความคิดสร้างสรรค์และระเบียบวินัยที่นำไปสู่การพัฒนาส่วนหน้า คำนึงถึงความสามารถในการปรับขนาดและโค้ดที่ชัดเจนซึ่งสามารถบำรุงรักษาและอ่านได้ การพัฒนาแบ็กเอนด์ก็เหมาะกับฉันเช่นกัน
+                    ฉันเชี่ยวชาญด้าน Firebase, Node.js, SQL server และ Postman">
                         My job is to build your website so that it is functional and user-friendly but at the same
                         time attractive. I have a strong passion for the creativity and discipline that goes into
                         front-end development. Keeping in mind scalability and clean code that is maintainable and
@@ -102,7 +118,8 @@
 
                     </p>
                     <a href="assets/CV-Chaiwat.pdf" download id="downloadCV">
-                        <button class="btn-rounded btn btn-outline-primary mt-4">Download CV</button>
+                        <button class="btn-rounded btn btn-outline-primary mt-4" data-en="Download CV"
+                            data-th="ดาวน์โหลด CV">Download CV</button>
                     </a>
 
                 </div>
@@ -115,8 +132,8 @@
     <!-- service section -->
     <section class="section" id="service">
         <div class="container text-center">
-            <p class="section-subtitle">What Skills I Have</p>
-            <h6 class="section-title mb-6">My Experience<h6>
+            <p class="section-subtitle" data-en="What Skills I Have" data-th="ความสามารถที่มี">What Skills I Have</p>
+            <h6 class="section-title mb-6" data-en="My Experience" data-th="ประสบการณ์ของฉัน">My Experience<h6>
                     <p class="section-subtitle">Fontend Developer</p>
                     <!-- row -->
                     <div class="row">
@@ -126,7 +143,7 @@
                                     <img src="https://www.w3.org/html/logo/downloads/HTML5_Badge_256.png " alt="HTML5"
                                         class="icon">
                                     <h6 class="title">HTML5</h6>
-                                    <p class="subtitle">Experienced</p>
+                                    <p class="subtitle" data-en="Experienced" data-th="ชำนาญ">Experienced</p>
                                 </div>
                             </div>
                         </div>
@@ -136,17 +153,17 @@
                                     <img src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/121-css3-512.png"
                                         alt="CSS" class="icon">
                                     <h6 class="title">CSS</h6>
-                                    <p class="subtitle">Experienced</p>
+                                    <p class="subtitle" data-en="Experienced" data-th="ชำนาญ">Experienced</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-3">
                             <div class="service-card fade-in">
                                 <div class="body d-flex flex-column justify-content-center align-items-center">
-                                    <img src="../public/assets/imgs/icons8-javascript-96.png"
-                                        alt="Javascript" class="icon">
+                                    <img src="../public/assets/imgs/icons8-javascript-96.png" alt="Javascript"
+                                        class="icon">
                                     <h6 class="title">Javascript</h6>
-                                    <p class="subtitle">Intermediate</p>
+                                    <p class="subtitle" data-en="Intermediate" data-th="ปานกลาง">Intermediate</p>
                                 </div>
                             </div>
                         </div>
@@ -156,7 +173,7 @@
                                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png"
                                         alt="React" class="icon">
                                     <h6 class="title">React</h6>
-                                    <p class="subtitle">Intermediate</p>
+                                    <p class="subtitle" data-en="Intermediate" data-th="ปานกลาง">Intermediate</p>
                                 </div>
                             </div>
                         </div>
@@ -179,7 +196,7 @@
 
                                         </Html>
                                     </h6>
-                                    <p class="subtitle">Intermediate
+                                    <p class="subtitle" data-en="Intermediate" data-th="ปานกลาง">Intermediate
                                 </div>
                             </div>
                         </div>
@@ -189,7 +206,7 @@
                                     <img src="https://tribes.agency/wp-content/uploads/2023/10/ext-550.png"
                                         alt="SQL Server" class="icon">
                                     <h6 class="title">SQL Server</h6>
-                                    <p class="subtitle">Intermediate</p>
+                                    <p class="subtitle" data-en="Intermediate" data-th="ปานกลาง">Intermediate</p>
                                 </div>
                             </div>
                         </div>
@@ -199,7 +216,7 @@
                                     <img src="https://cdn.icon-icons.com/icons2/691/PNG/512/google_firebase_icon-icons.com_61474.png"
                                         alt="Firebase" class="icon">
                                     <h6 class="title">Firebase</h6>
-                                    <p class="subtitle">Experienced</p>
+                                    <p class="subtitle" data-en="Experienced" data-th="ชำนาญ">Experienced</p>
                                 </div>
                             </div>
                         </div>
@@ -209,7 +226,7 @@
                                     <img src="https://cdn.iconscout.com/icon/free/png-256/free-postman-3521648-2945092.png"
                                         alt="Postman" class="icon">
                                     <h6 class="title">Postman</h6>
-                                    <p class="subtitle">Intermediate</p>
+                                    <p class="subtitle" data-en="Intermediate" data-th="ปานกลาง">Intermediate</p>
                                 </div>
                             </div>
                         </div>
@@ -227,19 +244,20 @@
                                         alt="Git & Github" class="icon">
                                     <h6 class="title">
                                         <Html>Git & Github
+
                                         </Html>
                                     </h6>
-                                    <p class="subtitle">Intermediate
+                                    <p class="subtitle" data-en="Intermediate" data-th="ปานกลาง">Intermediate
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-3">
                             <div class="service-card fade-in">
                                 <div class="body d-flex flex-column justify-content-center align-items-center">
-                                    <img src="../public/assets/imgs/icons8-visual-studio-code-2019-96.png"
-                                        alt="VS Code" class="icon">
+                                    <img src="../public/assets/imgs/icons8-visual-studio-code-2019-96.png" alt="VS Code"
+                                        class="icon">
                                     <h6 class="title">VS Code</h6>
-                                    <p class="subtitle">Experienced</p>
+                                    <p class="subtitle" data-en="Experienced" data-th="ชำนาญ">Experienced</p>
                                 </div>
                             </div>
                         </div>
@@ -249,7 +267,7 @@
                                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Apache_NetBeans_Logo.svg/1200px-Apache_NetBeans_Logo.svg.png"
                                         alt="Netbeans" class="icon">
                                     <h6 class="title">Netbeans</h6>
-                                    <p class="subtitle">Intermediate</p>
+                                    <p class="subtitle" data-en="Intermediate" data-th="ปานกลาง">Intermediate</p>
                                 </div>
                             </div>
                         </div>
@@ -259,7 +277,7 @@
                                     <img src="../public/assets/imgs/icons8-netlify-a-cloud-computing-company-that-offers-hosting-and-serverless-backend-services-for-static-websites.-96.png"
                                         alt="Netlify" class="icon">
                                     <h6 class="title">Netlify</h6>
-                                    <p class="subtitle">Intermediate</p>
+                                    <p class="subtitle" data-en="Intermediate" data-th="ปานกลาง">Intermediate</p>
                                 </div>
                             </div>
                         </div>
@@ -270,19 +288,19 @@
     <!-- portfolio section -->
     <section class="section" id="portfolio">
         <div class="container text-center">
-            <p class="section-subtitle">My Recent Work</p>
-            <h6 class="section-title mb-6">Portfolio</h6>
+            <p class="section-subtitle" data-en="My Recent Work" data-th="งานล่าสุดของฉัน">My Recent Work</p>
+            <h6 class="section-title mb-6" data-en="My Portfolio" data-th="ผลงาน">Portfolio</h6>
             <!-- row -->
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <div class="portfolio-card square">
-                        <img src="assets/imgs/daniel.png" class="portfolio-card-img"
-                            alt="">
+                        <img src="assets/imgs/daniel.png" class="portfolio-card-img" alt="">
                         <span class="portfolio-card-overlay">
                             <span class="portfolio-card-caption">
                                 <h4>DANIEL Web Chatbot</h4>
                                 <p class="font-weight-normal">Tools: HTML5 CSS React.js</p>
-                                <a href="https://web-chat-bot-36b75.web.app" class="btn btn-primary">Live Demo</a>
+                                <a href="https://web-chat-bot-36b75.web.app" class="btn btn-primary" data-en="Live Demo"
+                                    data-th="เปิดตัวอย่าง">Live Demo</a>
                             </span>
                         </span>
                     </div>
@@ -290,13 +308,13 @@
                 <div class="col-md-4 mb-4">
                     <div class="portfolio-card square">
                         <img class="portfolio-card-img" src="assets/imgs/triptrip (2).png"
-                            class="img-responsive rounded"
-                            alt="">
+                            class="img-responsive rounded" alt="">
                         <span class="portfolio-card-overlay">
                             <span class="portfolio-card-caption">
                                 <h4>TripTrip Booking air Website</h4>
                                 <p class="font-weight-normal">Tools: HTML5 CSS JS</p>
-                                <a href="https://triptriptravel.netlify.app" class="btn btn-primary">Live Demo</a>
+                                <a href="https://triptriptravel.netlify.app" class="btn btn-primary" data-en="Live Demo"
+                                    data-th="เปิดตัวอย่าง">Live Demo</a>
                             </span>
                         </span>
                     </div>
@@ -309,20 +327,22 @@
                             <span class="portfolio-card-caption">
                                 <h4>Calculator Web App</h4>
                                 <p class="font-weight-normal">Tools: HTML5 CSS </p>
-                                <a href="https://calculator-8c57e.firebaseapp.com" class="btn btn-primary">Live Demo</a>
+                                <a href="https://calculator-8c57e.firebaseapp.com" class="btn btn-primary"
+                                    data-en="Live Demo" data-th="เปิดตัวอย่าง">Live Demo</a>
                             </span>
                         </span>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="portfolio-card square">
-                        <img class="portfolio-card-img" src="assets/imgs/personal Portfolio.png" class="img-responsive rounded"
-                            alt="">
+                        <img class="portfolio-card-img" src="assets/imgs/personal Portfolio.png"
+                            class="img-responsive rounded" alt="">
                         <span class="portfolio-card-overlay">
                             <span class="portfolio-card-caption">
                                 <h4>Personal Portfolio</h4>
                                 <p class="font-weight-normal">Tools:HTML5 CSS JS</p>
-                                <a href="https://personalportfolio02.netlify.app" class="btn btn-primary">Live Demo</a>
+                                <a href="https://personalportfolio02.netlify.app" class="btn btn-primary"
+                                    data-en="Live Demo" data-th="เปิดตัวอย่าง">Live Demo</a>
                             </span>
                         </span>
                     </div>
@@ -337,7 +357,7 @@
                                 <h4>JaiDee Mobile App</h4>
                                 <p class="font-weight-normal">Tools: Figma firebase TunkableX</p>
                                 <a href="https://x.thunkable.com/projectPage/659c01de98cc87b0a45dad8f"
-                                    class="btn btn-primary">Live Demo</a>
+                                    class="btn btn-primary" data-en="Live Demo" data-th="เปิดตัวอย่าง">Live Demo</a>
 
                             </span>
                         </span>
@@ -345,14 +365,14 @@
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="portfolio-card square">
-                        <img class="portfolio-card-img" src="assets/imgs/ecomIT.png"
-                            class="img-responsive rounded"
+                        <img class="portfolio-card-img" src="assets/imgs/ecomIT.png" class="img-responsive rounded"
                             alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
                         <span class="portfolio-card-overlay">
                             <span class="portfolio-card-caption">
                                 <h4>E-Commerce Website(One Page)</h4>
                                 <p class="font-weight-normal">Tools: HTML5 CSS JS</p>
-                                <a href="https://e-commerce-8dff3.firebaseapp.com" class="btn btn-primary">Live Demo</a>
+                                <a href="https://e-commerce-8dff3.firebaseapp.com" class="btn btn-primary"
+                                    data-en="Live Demo" data-th="เปิดตัวอย่าง">Live Demo</a>
                             </span>
                         </span>
                     </div>
@@ -371,8 +391,8 @@
     <section class="section" id="blog">
         <!-- container -->
         <div class="container text-center">
-            <p class="section-subtitle">Activities</p>
-            <h6 class="section-title mb-6">Certification</h6>
+            <p class="section-subtitle" data-en="Activities" data-th="กิจกรรมที่ผ่านมา">Activities</p>
+            <h6 class="section-title mb-6" data-en="Certification" data-th="หลักสูตร">Certification</h6>
             <!-- blog-wrapper -->
             <div class="blog-card">
                 <div class="blog-card-header">
@@ -380,23 +400,34 @@
                         alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
                 </div>
                 <div class="blog-card-body">
-                    <h5 class="blog-card-title">Line Dev Camp</h6>
+                    <h5 class="blog-card-title" data-en="Line Dev Camp" data-th="ค่ายนักพัฒนาแอปพลิเคชันไลน์">Line Dev
+                        Camp</h6>
 
                         <p class="blog-card-caption">
-                            <a href="#">By: Admin</a>
+                            <a href="#" data-en="By: Admin" data-th="โดย: ผู้ดูแล">By: Admin</a>
                         </p>
-                        <p>Line application development With 50 million Thai people using Line for a long time, service
+                        <p data-en="Line application development With 50 million Thai people using Line for a long time, service
+                        through Line is therefore important. If you can make a website or have a storefront online
+                        There is no need to download or install additional apps. Chatbots play a huge role in
+                        answering chats or providing automatic services."
+                            data-th="การพัฒนาแอพพลิเคชั่น Line  50 ล้านคนที่ใช้งาน Line  การบริการผ่าน Line จึงมีความสำคัญ หากคุณสามารถสร้างเว็บไซต์หรือมีหน้าร้านออนไลน์ได้ ก็ไม่จำเป็นต้องดาวน์โหลดหรือติดตั้งแอพเพิ่มเติม Chatbots มีบทบาทสำคัญในการตอบแชทหรือให้บริการอัตโนมัติ">
+                            Line application development With 50 million Thai people using Line for a long time, service
                             through Line is therefore important. If you can make a website or have a storefront online
                             There is no need to download or install additional apps. Chatbots play a huge role in
                             answering chats or providing automatic services.
                         </p>
 
-                        <p><b>So, I utilized this knowledge to develop a chatbot application and service project via
+                        <p><b data-en="So, I utilized this knowledge to develop a chatbot application and service project via
+                            LINE to obtain this certificate."
+                                data-th="ดังนั้น,
+                            ฉันใช้ความรู้นี้ในการพัฒนาแอปพลิเคชันแชทบอทและโครงการบริการผ่าน LINE เพื่อรับใบรับรองนี้">So, I utilized this knowledge to
+                                develop a chatbot application and service project via
                                 LINE to obtain this certificate.</b>
                         </p>
 
 
-                        <a href="#" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
+                        <a href="#" class="blog-card-link" data-en="Read more" data-th="อ่านต่อ">Read more <i
+                                class="ti-angle-double-right"></i></a>
                 </div>
             </div><!-- end of blog wrapper -->
 
@@ -407,20 +438,27 @@
                         alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
                 </div>
                 <div class="blog-card-body">
-                    <h5 class="blog-card-title">National Conferece Computer Education(NCCE2024)</h6>
+                    <h5 class="blog-card-title" data-en="National Conferece Computer Education(NCCE2024)"
+                        data-th="การศึกษาคอมพิวเตอร์การประชุมแห่งชาติ (NCCE2024)">National Conferece Computer
+                        Education(NCCE2024)</h6>
 
                         <p class="blog-card-caption">
-                            <a href="#">By: Admin</a>
+                            <a href="#" data-en="By: Admin" data-th="โดย: ผู้ดูแล">By: Admin</a>
                         </p>
 
-                        <p>I learned about statistics and research in class. I did a research project on the gaming
+                        <p data-en="I learned about statistics and research in class. I did a research project on the gaming PUBG. behavior of Nakhon Phanom University students  The project was submitted and accepted for publication. I gained skills in data analysis and understanding data classification. I also learned how to present research effectively and make it interesting for further development."
+                            data-th="ฉันเรียนเกี่ยวกับสถิติและการวิจัยในชั้นเรียน ฉันทำโครงการวิจัยพฤติกรรมการเล่นเกม PUBG ของนักศึกษามหาวิทยาลัยนครพนม โครงการนี้ได้รับการเสนอและยอมรับให้ตีพิมพ์ ฉันได้รับทักษะในการวิเคราะห์ข้อมูลและทำความเข้าใจการจำแนกข้อมูล
+                            ฉันยังได้เรียนรู้วิธีการนำเสนองานวิจัยอย่างมีประสิทธิภาพและน่าสนใจเพื่อการพัฒนาต่อไป">I
+                            learned about statistics and research in class. I did a research project on the
+                            gaming
                             behavior of Nakhon Phanom University students while playing PUBG. The project was submitted
                             and accepted for publication. I gained skills in data analysis and understanding data
                             classification. I also learned how to present research effectively and make it interesting
                             for further development.
                         </p>
 
-                        <a href="#" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
+                        <a href="#" class="blog-card-link" data-en="Read more" data-th="อ่านต่อ">Read more <i
+                                class="ti-angle-double-right"></i></a>
                 </div>
             </div>
             <div class="blog-card">
@@ -429,18 +467,26 @@
                         alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
                 </div>
                 <div class="blog-card-body">
-                    <h5 class="blog-card-title">Jury committee Band contest to be number one</h6>
+                    <h5 class="blog-card-title" data-en="Jury committee Band contest to be number one"
+                        data-th="การตัดสินประกวดวงดนตรีทูบีนัมเบอร์วัน">Jury committee Band contest to be number one
+                        </h6>
 
                         <p class="blog-card-caption">
-                            <a href="#">By: Admin</a>
+                            <a href="#" data-en="By: Admin" data-th="โดย: ผู้ดูแล">By: Admin</a>
 
                         </p>
-                        <p>I was selected to be a judge for the band's top contest for two consecutive years because I
+                        <p data-en="I was selected to be a judge for the band's top contest for two consecutive years because I
+                        had previously participated in the competition and had made a great impression on the
+                        organizers with my original artistic skills. I soloed the guitar on my shoulder and back and
+                        received an award at that time, demonstrating excellent creative skills."
+                            data-th="ฉันได้รับเลือกให้เป็นผู้ตัดสินการประกวดระดับสูงสุดของวงดนตรีเป็นเวลาสองปีติดต่อกันเนื่องจากฉันเคยเข้าร่วมการแข่งขันมาก่อนและสร้างความประทับใจให้กับผู้จัดงานด้วยทักษะทางศิลปะดั้งเดิมของฉัน และได้รับรางวัลในเวลานั้น ซึ่งแสดงให้เห็นถึงทักษะการสร้างสรรค์ที่ยอดเยี่ยม">
+                            I was selected to be a judge for the band's top contest for two consecutive years because I
                             had previously participated in the competition and had made a great impression on the
                             organizers with my original artistic skills. I soloed the guitar on my shoulder and back and
                             received an award at that time, demonstrating excellent creative skills.</p>
 
-                        <a href="#" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
+                        <a href="#" class="blog-card-link" data-en="Read more" data-th="อ่านต่อ">Read more <i
+                                class="ti-angle-double-right"></i></a>
                 </div>
             </div><!-- end of blog wrapper -->
 
@@ -451,18 +497,24 @@
                         alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
                 </div>
                 <div class="blog-card-body">
-                    <h5 class="blog-card-title">GitHub For Developer</h6>
+                    <h5 class="blog-card-title" data-en="GitHub For Developer" data-th="กิตฮับสำหรับนักพัฒนาโปรแกรม">
+                        GitHub For Developer</h6>
 
                         <p class="blog-card-caption">
-                            <a href="#">By: Admin</a>
+                            <a href="#" data-en="By: Admin" data-th="โดย: ผู้ดูแล">By: Admin</a>
 
                         </p>
 
-                        <p>Learn how to use GitHub to develop various skills and enhance the quality and value of source
+                        <p data-en="Learn how to use GitHub to develop various skills and enhance the quality and value of source
+                        code. Take a course from leaders in web development and education, such as the Thai
+                        community."
+                            data-th="เรียนรู้วิธีใช้ GitHub เพื่อพัฒนาทักษะต่างๆ และปรับปรุงคุณภาพและคุณค่าของซอร์สโค้ด เรียนหลักสูตรจากผู้นำด้านการพัฒนาเว็บไซต์และการศึกษาเช่นชุมชนไทย">
+                            Learn how to use GitHub to develop various skills and enhance the quality and value of
+                            source
                             code. Take a course from leaders in web development and education, such as the Thai
                             community.</p>
 
-                        <a href="#" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
+                        <a href="#" class="blog-card-link" data-en="Read more" data-th="อ่านต่อ">Read more <i class="ti-angle-double-right"></i></a>
                 </div>
             </div><!-- end of blog wrapper -->
 
@@ -472,8 +524,8 @@
     <!-- contact section -->
     <section class="section" id="contact">
         <div class="container text-center">
-            <p class="section-subtitle">How can you communicate?</p>
-            <h6 class="section-title mb-5">Contact Me</h6>
+            <p class="section-subtitle" data-en="How can you communicate?" data-th="วิธีที่คุณสามารถสื่อสารได้">How can you communicate?</p>
+            <h6 class="section-title mb-5" data-en="Contact Me" data-th="ติดต่อฉัน">Contact Me</h6>
             <!-- contact form -->
 
             <div id="contactForm1">
@@ -481,7 +533,7 @@
                 <h4>Email</h4>
                 <h6>Chaiwat26859@gmail.com</h6>
                 <a href="mailto:Chaiwat26859@gmiail.com">
-                    <p class="sentmassage">Sent a message</p>
+                    <p class="sentmassage" data-en="Sent a message" data-th="ส่งข้อความที่นี้">Sent a message</p>
                 </a>
             </div>
 
@@ -490,7 +542,7 @@
                 <h4>Messanger</h4>
                 <h6>Chaiwat Butworn</h6>
                 <a href="https://m.me/ChaiwatButworn">
-                    <p class="sentmassage">Sent a message</p>
+                    <p class="sentmassage" data-en="Sent a message" data-th="ส่งข้อความที่นี้">Sent a message</p>
                 </a>
             </div>
 
@@ -499,7 +551,7 @@
                 <h4>line</h4>
                 <h6>Chaiwat</h6>
                 <a href="http://line.me/ti/p/chaiwatsggibson">
-                    <p class="sentmassage">Sent a message</p>
+                    <p class="sentmassage" data-en="Sent a message" data-th="ส่งข้อความที่นี้">Sent a message</p>
                 </a>
             </div>
             <br>
@@ -509,7 +561,7 @@
             <form action="" class="contact-form col-md-10 col-lg-8 m-auto">
                 <div class="form-row">
                     <div class="form-group col-sm-6">
-                        <input type="text" size="50" class="form-control" placeholder="Your Full Name" required>
+                        <input type="text" size="50" class="form-control" placeholder="Your Full Name" required >
                     </div>
                     <div class="form-group col-sm-6">
                         <input type="email" class="form-control" placeholder="Your Email" requried>
@@ -530,8 +582,7 @@
     <div class="container">
         <footer class="footer">
             <p class="mb-0">Copyright
-                <script>document.write(new Date().getFullYear())</script> &copy; <a
-                    href="">JoeWebDev</a>
+                <script>document.write(new Date().getFullYear())</script> &copy; <a href="">JoeWebDev</a>
             </p>
             <div class="social-links text-right m-auto ml-sm-auto">
                 <a href="javascript:void(0)" class="link"><i class="ti-facebook"></i></a>
@@ -556,6 +607,22 @@
 
     <!-- jquery-3.7.1.min.js -->
     <script src="jquery-3.7.1.min.js"></script>
+
+    <script>
+        let currentLanguage = 'en';
+
+        document.getElementById('languageToggle').addEventListener('click', function () {
+            currentLanguage = currentLanguage === 'en' ? 'th' : 'en';
+            updateLanguage();
+        });
+
+        function updateLanguage() {
+            document.querySelectorAll('[data-en]').forEach(elem => {
+                elem.textContent = elem.getAttribute(`data-${currentLanguage}`);
+            });
+            // อัปเดตปุ่มและอื่นๆ ตามต้องการ
+        }
+    </script>
 
 </body>
 
